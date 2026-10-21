@@ -1,6 +1,7 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { CONTACT, CONTACT_DIRECT, INQUIRY } from "@/content/closing";
 import { SITE } from "@/content/site";
+import { sendLead } from "@/lib/leads";
 import { Container } from "@/ui/Container";
 import { SectionTitle } from "@/ui/SectionTitle";
 import { cx } from "@/ui/cx";
@@ -13,16 +14,24 @@ const FIELD =
  * CONTACT — o título da seção e o formulário: à esquerda o convite e o e-mail
  * direto, à direita o form — que já qualifica o filmmaker (volume e formatos
  * que ele precisa).
- * MOCK — o envio só troca para a tela de obrigado; falta ligar a um destino
- * (e-mail, webhook ou planilha).
+ * O envio vai para a planilha de leads (`lib/leads.ts`); se falhar, o form
+ * continua preenchido e oferece o e-mail como saída.
  */
 export function Contact() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const f = INQUIRY.fields;
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      await sendLead(e.currentTarget);
+      setStatus("sent");
+    } catch (err) {
+      console.error("[leads]", err);
+      setStatus("error");
+    }
   }
 
   return (
@@ -41,14 +50,14 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={150}>
-            {sent ? (
+            {status === "sent" ? (
               <div className="flex h-full min-h-[24rem] flex-col items-center justify-center border hairline p-10 text-center" role="status">
                 <p className="display text-3xl">{INQUIRY.success.title}</p>
                 <p className="script mt-1 text-3xl text-ink-soft">{INQUIRY.success.script}</p>
                 <p className="mt-6 max-w-sm text-ink-soft">{INQUIRY.success.text}</p>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
+              <form onSubmit={onSubmit} className="relative grid gap-x-8 gap-y-7 sm:grid-cols-2">
                 <Field label={f.name}>
                   <input name="name" required autoComplete="name" className={FIELD} />
                 </Field>
@@ -80,16 +89,30 @@ export function Contact() {
                   </div>
                 </fieldset>
 
+                {/* Isca para bots: escondida de quem enxerga e de leitor de tela. */}
+                <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-px w-px opacity-0" />
+
                 <Field label={f.message} className="sm:col-span-2">
                   <textarea name="message" rows={3} className={cx(FIELD, "resize-none")} />
                 </Field>
 
+                {status === "error" && (
+                  <p role="alert" className="text-sm leading-relaxed text-ink sm:col-span-2">
+                    {INQUIRY.error}{" "}
+                    <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:opacity-60">
+                      {SITE.email}
+                    </a>
+                    .
+                  </p>
+                )}
+
                 <div className="flex sm:col-span-2 sm:justify-end">
                   <button
                     type="submit"
-                    className="label min-h-12 border border-ink bg-ink px-9 py-3 text-paper transition-colors hover:bg-transparent hover:text-ink"
+                    disabled={status === "sending"}
+                    className="label min-h-12 border border-ink bg-ink px-9 py-3 text-paper transition-colors hover:bg-transparent hover:text-ink disabled:cursor-wait disabled:opacity-60 disabled:hover:bg-ink disabled:hover:text-paper"
                   >
-                    {INQUIRY.submit}
+                    {status === "sending" ? INQUIRY.sending : INQUIRY.submit}
                   </button>
                 </div>
               </form>

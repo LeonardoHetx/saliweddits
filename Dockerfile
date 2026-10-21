@@ -3,6 +3,10 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci
 COPY . .
+# URL do Apps Script dos leads (apps-script/README.md). O Vite a embute no
+# bundle no build: docker build --build-arg VITE_LEADS_URL=https://…/exec .
+ARG VITE_LEADS_URL=""
+ENV VITE_LEADS_URL=$VITE_LEADS_URL
 RUN npm run build
 
 FROM nginx:alpine AS runner

@@ -18,6 +18,8 @@ export const INQUIRY = {
     message: "Anything we should know? (optional)",
   },
   submit: "Send inquiry",
+  sending: "Sending…",
+  error: "Something went wrong and your message wasn't sent. Please try again, or write to us at",
   success: {
     title: "Thank you",
     script: "talk soon",
