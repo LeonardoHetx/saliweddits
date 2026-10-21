@@ -4,9 +4,9 @@ import { cx } from "./cx";
 type Tone = "ink" | "light" | "solid";
 
 const TONES: Record<Tone, string> = {
-  ink: "border-ink/70 text-ink hover:bg-ink hover:text-paper",
-  light: "border-paper/70 text-paper hover:bg-paper hover:text-ink",
-  solid: "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
+  ink: "border-olive/70 text-olive hover:bg-olive hover:text-paper",
+  light: "border-paper/70 text-paper hover:bg-paper hover:text-olive",
+  solid: "border-olive bg-olive text-paper hover:bg-transparent hover:text-olive",
 };
 
 /** Botão retangular fino, como o "INQUIRE" da referência — nada de pílula. */

@@ -8,6 +8,14 @@ export default {
         // Papéis quentes da referência (Lucia/Showit): nada de branco puro nem
         // cinza neutro — tudo puxado para o bege.
         paper: "#F2F0EA",
+        // Cores da marca (Aline, 21/10/2026).
+        // Oliva: títulos, detalhes e seções.
+        olive: {
+          DEFAULT: "#454B38",
+          deep: "#3A3F2F",
+        },
+        // Marrom: elementos vintage e tipografia (cursiva, assinatura, rótulos).
+        umber: "#80583F",
         linen: "#E8E6DC",
         ink: {
           DEFAULT: "#24231F",

@@ -1,7 +1,7 @@
 import { cx } from "./cx";
 import { Reveal } from "./Reveal";
 
-/** Título em didone caixa alta + linha em script logo abaixo. */
+/** Título em didone caixa alta (oliva) + linha em script (marrom) logo abaixo. */
 export function SectionTitle({
   title,
   script,
@@ -19,9 +19,9 @@ export function SectionTitle({
 }) {
   return (
     <Reveal className={cx(align === "center" ? "text-center" : "text-left", tone === "light" && "text-paper", className)}>
-      <Tag className="display text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem]">{title}</Tag>
+      <Tag className={cx("display text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem]", tone === "ink" && "text-olive")}>{title}</Tag>
       {script && (
-        <p className={cx("script mt-1 text-[1.6rem] sm:text-[2rem]", tone === "light" ? "text-paper/80" : "text-ink-soft")}>
+        <p className={cx("script mt-1 text-[1.6rem] sm:text-[2rem]", tone === "light" ? "text-paper/80" : "text-umber")}>
           {script}
         </p>
       )}

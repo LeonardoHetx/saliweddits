@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="border-t hairline bg-paper">
       <div className="grid border-b hairline md:grid-cols-3">
         <div className="border-b hairline px-5 py-12 text-center md:border-b-0 md:border-r">
-          <p className="script text-3xl">Navigate</p>
+          <p className="script text-3xl text-umber">Navigate</p>
           <ul className="mt-5 space-y-2.5">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -30,7 +30,7 @@ export function Footer() {
           <p className="max-w-[16rem] text-sm text-ink-soft">{FOOTER.tagline}</p>
         </div>
         <div className="px-5 py-12 text-center">
-          <p className="script text-3xl">Connect</p>
+          <p className="script text-3xl text-umber">Connect</p>
           <ul className="mt-5 space-y-2.5">
             {connect.map((item) => (
               <li key={item.href}>

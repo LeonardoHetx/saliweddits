@@ -118,7 +118,7 @@ export function Header() {
       <div
         id="mobile-menu"
         className={cx(
-          "fixed inset-0 z-50 flex flex-col bg-night text-paper transition-opacity duration-500 lg:hidden",
+          "fixed inset-0 z-50 flex flex-col bg-olive text-paper transition-opacity duration-500 lg:hidden",
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         )}
         aria-hidden={!menuOpen}

@@ -31,7 +31,7 @@
   }
 
   ::selection {
-    @apply bg-ink text-paper;
+    @apply bg-olive text-paper;
   }
 
   /* Âncoras não ficam atrás da barra fixa. */

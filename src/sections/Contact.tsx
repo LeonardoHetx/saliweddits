@@ -8,7 +8,7 @@ import { cx } from "@/ui/cx";
 import { Reveal } from "@/ui/Reveal";
 
 const FIELD =
-  "w-full border-0 border-b border-ink/30 bg-transparent px-0 py-3 text-base font-light text-ink placeholder:text-ink-mute focus:border-ink focus:outline-none focus:ring-0";
+  "w-full border-0 border-b border-ink/30 bg-transparent px-0 py-3 text-base font-light text-ink placeholder:text-ink-mute focus:border-olive focus:outline-none focus:ring-0";
 
 /**
  * CONTACT — o título da seção e o formulário: à esquerda o convite e o e-mail
@@ -46,7 +46,7 @@ export function Contact() {
         <SectionTitle title={CONTACT.title} />
         <div className="mt-14 grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-24">
           <Reveal>
-            <p className="font-display text-[1.6rem] leading-[1.35] sm:text-[2rem]">{INQUIRY.description}</p>
+            <p className="font-display text-[1.6rem] leading-[1.35] text-olive sm:text-[2rem]">{INQUIRY.description}</p>
             <p className="mt-10 border-t hairline pt-8 text-sm leading-relaxed text-ink-soft">
               {CONTACT_DIRECT}{" "}
               <a href={`mailto:${SITE.email}`} className="text-ink underline underline-offset-4 hover:opacity-60">
@@ -58,8 +58,8 @@ export function Contact() {
           <Reveal delay={150}>
             {status === "sent" ? (
               <div className="flex h-full min-h-[24rem] flex-col items-center justify-center border hairline p-10 text-center" role="status">
-                <p className="display text-3xl">{INQUIRY.success.title}</p>
-                <p className="script mt-1 text-3xl text-ink-soft">{INQUIRY.success.script}</p>
+                <p className="display text-3xl text-olive">{INQUIRY.success.title}</p>
+                <p className="script mt-1 text-3xl text-umber">{INQUIRY.success.script}</p>
                 <p className="mt-6 max-w-sm text-ink-soft">{INQUIRY.success.text}</p>
               </div>
             ) : (
@@ -116,7 +116,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="label min-h-12 border border-ink bg-ink px-9 py-3 text-paper transition-colors hover:bg-transparent hover:text-ink disabled:cursor-wait disabled:opacity-60 disabled:hover:bg-ink disabled:hover:text-paper"
+                    className="label min-h-12 border border-olive bg-olive px-9 py-3 text-paper transition-colors hover:bg-transparent hover:text-olive disabled:cursor-wait disabled:opacity-60 disabled:hover:bg-olive disabled:hover:text-paper"
                   >
                     {status === "sending" ? INQUIRY.sending : INQUIRY.submit}
                   </button>
@@ -143,7 +143,7 @@ function Chip({ type, name, value }: { type: "radio" | "checkbox"; name: string;
   return (
     <label className="cursor-pointer">
       <input type={type} name={name} value={value} className="peer sr-only" />
-      <span className="label inline-flex min-h-10 items-center border border-ink/30 px-4 py-2 transition-colors hover:border-ink peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-1 peer-focus-visible:outline-offset-2">
+      <span className="label inline-flex min-h-10 items-center border border-ink/30 px-4 py-2 transition-colors hover:border-ink peer-checked:border-olive peer-checked:bg-olive peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-1 peer-focus-visible:outline-offset-2">
         {value}
       </span>
     </label>
