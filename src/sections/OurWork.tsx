@@ -48,7 +48,8 @@ function FormatPanel({ format, index }: { format: WorkFormat; index: number }) {
   const body = (
     <>
       <Photo src={format.image} className="transition-transform duration-[1.6s] ease-out group-hover:scale-[1.04]" />
-      <span className="absolute inset-0 bg-gradient-to-t from-night via-night/70 to-night/10" />
+      {/* Escurece só a metade de baixo, onde fica o texto: o casal fica na cor original. */}
+      <span className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-night via-night/80 to-transparent" />
       {playable && (
         <span className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-full border border-paper/70 text-paper transition-colors group-hover:bg-paper group-hover:text-ink">
           <PlayIcon className="ml-0.5 h-4 w-4" />

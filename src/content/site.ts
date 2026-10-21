@@ -7,7 +7,7 @@ export const SITE = {
   /** Wordmark: parte em serifa + parte em script, como o "Lucia" da referência. */
   wordmark: { serif: "SALI", script: "weddits" },
   email: "hello@saliweddits.com",
-  instagram: { handle: "@saliweddits", href: "https://instagram.com/" },
+  instagram: { handle: "@sali.weddingfilmediting", href: "https://www.instagram.com/sali.weddingfilmediting/" },
 } as const;
 
 /** Menu: as quatro "páginas" são seções da mesma página, por âncora. */

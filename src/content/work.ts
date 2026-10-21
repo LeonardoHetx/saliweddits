@@ -7,7 +7,7 @@ export type WorkFormat = {
   name: string;
   text: string;
   length: string;
-  /** Pôster do painel (thumbnail do filme). */
+  /** Pôster do painel: frame 1080p do próprio filme, recortado em 4:5 no casal. */
   image: string;
   /** Filme no YouTube. Sem ele, o painel não abre player. */
   youtubeId?: string;
@@ -26,21 +26,21 @@ export const OUR_WORK: {
       name: "Teasers & Social Edits",
       text: "Short, engaging edits designed to capture attention and leave a lasting impression. Perfect for wedding sneak peeks, Instagram Reels, and shareable moments that build excitement for the full film.",
       length: "Typically 15–90 seconds",
-      image: "/films/bkI0jecEkZE.jpg",
+      image: "/work/teaser.jpg",
       youtubeId: "bkI0jecEkZE",
     },
     {
       name: "Highlight Films",
       text: "A beautifully crafted recap of the wedding day, bringing together the best moments, meaningful audio, and music to tell a story that feels authentic, emotional, and true to each couple.",
       length: "Typically 3–7 minutes",
-      image: "/films/_mWVsNkK_MI.jpg",
+      image: "/work/highlight.jpg",
       youtubeId: "_mWVsNkK_MI",
     },
     {
       name: "Feature Films",
       text: "A longer, more immersive wedding film that gives the story room to unfold. Blending cinematic storytelling with extended moments from the ceremony, vows, speeches, and celebration.",
       length: "Typically 8–20 minutes",
-      image: "/films/zCPldltdRjA.jpg",
+      image: "/work/feature.jpg",
       youtubeId: "zCPldltdRjA",
     },
     {

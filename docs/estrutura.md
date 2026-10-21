@@ -4,7 +4,7 @@ Página única, em inglês, para **filmmakers e estúdios** (B2B, como a
 raweddings.co): quem compra é quem filma, não o casal. O menu (Home · Our
 Work · Our Story · Contact) são âncoras na mesma página.
 
-A conversão é o formulário de contato (`#inquire`): todo CTA leva para lá.
+A conversão é o formulário de contato (`#contact`): todo CTA leva para lá.
 O form já qualifica o filmmaker — volume de casamentos e formatos que precisa.
 
 ## Ordem e por quê
@@ -12,33 +12,28 @@ O form já qualifica o filmmaker — volume de casamentos e formatos que precisa
 | # | Seção | Âncora | O que diz | Copy |
 |---|---|---|---|---|
 | 1 | Hero | `#top` | Para quem é, o que é, a promessa. Vídeo de fundo: recorte de 18 s do reel (`public/video/`, 16:9 e 9:16). CTA único: contato | mock |
-| 2 | Intro | — | A dor ("40 horas de material num HD e sábado já tem casamento"), 3 pilares (seu estilo · sua marca · no prazo) e números | mock |
-| 3 | Our Work | `#our-work` | Prova visual cedo: tríptico com os 3 filmes reais + "More films" por formato | filmes reais + abas mock |
-| 4 | What We Edit | `#what-we-edit` | Os 4 formatos, do teaser ao documentário | **final** |
-| 5 | Craft | `#craft` | O ofício: antes/depois de cor + história, som, cor, ritmo | mock |
-| 6 | Process | `#process` | 5 passos, para tirar o medo de terceirizar | mock |
-| 7 | Testimonials | — | Prova social de outros filmmakers | mock |
-| 8 | Our Story | `#our-story` | O estúdio e a Aline: as pessoas depois da prova | **final** |
-| 9 | FAQ | `#faq` | Objeções de quem nunca terceirizou | mock |
-| 10 | Contact | `#contact` | Faixa "Let's edit your next season" + formulário de contato | mock |
-| — | Faixa de fotos + rodapé | — | Instagram, navegação, contato | mock |
+| 2 | Our Work | `#our-work` | Os 4 formatos (What We Edit) sobre os próprios filmes: cada painel é um filme real e abre o player | **final** (exceto o botão) |
+| 3 | How We Work Together | `#process` | 5 passos, para tirar o medo de terceirizar | mock |
+| 4 | Our Story | `#our-story` | O estúdio e a Aline | **final** |
+| 5 | Contact | `#contact` | Convite + formulário | mock |
 
-A lógica: **o quê → dor → prova → oferta → como → quem → dúvidas → ação**.
-Superfícies alternam (noite, linho, papel, sálvia) para nunca repetir duas
-iguais seguidas.
+A lógica: **o quê → o trabalho → como → quem → contato**. Superfícies
+alternam (noite, papel, linho) para nunca repetir duas iguais seguidas.
 
 ## Onde mexer
 
 - Copy: `src/content/*.ts` — um arquivo por seção; os componentes só leem daí.
-- Filmes: `src/content/films.ts` (`youtubeId` + thumbnail em `public/films/`).
+- Our Work: `src/content/work.ts` (texto + `youtubeId` de cada formato). Os
+  pôsteres em `public/work/` são frames 1080p dos filmes, recortados em 4:5
+  com o casal no centro (o painel estreito do desktop corta o meio deles).
 - Fotos de mock: `public/mock/` (picsum.photos / acervo Unsplash) — trocar
   pelas reais.
 
 ## Pendências
 
-- Copy final de Hero, Intro, Craft, Process, Testimonials, FAQ e Contact.
-- Números da Intro (320+ filmes, 6 países, 14 dias) e prazos do Process: mock.
-- Depoimentos reais (nome, estúdio, foto).
-- Foto da Aline (`FOUNDER.image`) e frame de documentário (`SERVICES`).
+- Copy final de Hero, How We Work Together e Contact.
+- Prazos e rodadas do How We Work Together (14 dias, 2 rodadas): mock.
+- Filme de documentário (`youtubeId` + pôster) para o 4º painel do Our Work.
+- Foto da Aline (`FOUNDER.image`) e da história (`STORY.image`).
 - Formulário: hoje só mostra a tela de obrigado — falta ligar a um destino.
-- Contatos reais: e-mail, Instagram, Vimeo, WhatsApp (`src/content/site.ts`).
+- E-mail real (`src/content/site.ts`); o Instagram já é o oficial.
