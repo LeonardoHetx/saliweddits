@@ -9,7 +9,7 @@ export const PROCESS = {
     },
     {
       title: "Style brief",
-      text: "Your references, LUTs, music library and must-have moments. One call the first time, then it's on file.",
+      text: "Your references, LUTs, music preferences and must-have moments.",
     },
     {
       title: "First cut",
