@@ -11,7 +11,7 @@ recebe um teaser grátis no estilo dele. Todo CTA leva para `#edit-test`.
 
 | # | Seção | Âncora | O que diz | Copy |
 |---|---|---|---|---|
-| 1 | Hero | `#top` | Para quem é, o que é, a promessa. Vídeo de fundo (reel). CTA: edit test + showreel | mock |
+| 1 | Hero | `#top` | Para quem é, o que é, a promessa. Vídeo de fundo: recorte de 18 s do reel (`public/video/`, 16:9 e 9:16). CTA: edit test + showreel | mock |
 | 2 | Intro | — | A dor ("40 horas de material num HD e sábado já tem casamento"), 3 pilares (seu estilo · sua marca · no prazo) e números | mock |
 | 3 | Our Work | `#our-work` | Prova visual cedo: tríptico com os 3 filmes reais + "More films" por formato | filmes reais + abas mock |
 | 4 | What We Edit | `#what-we-edit` | Os 4 formatos, do teaser ao documentário | **final** |
@@ -40,7 +40,5 @@ iguais seguidas.
 - Números da Intro (320+ filmes, 6 países, 14 dias) e prazos do Process: mock.
 - Depoimentos reais (nome, estúdio, foto).
 - Foto da Aline (`FOUNDER.image`) e frame de documentário (`SERVICES`).
-- Vídeo do hero: hoje é YouTube; o ideal é um recorte MP4 de 10–20 s
-  (`HERO.video.mp4`), sem a marca nem as legendas automáticas do YouTube.
 - Formulário: hoje só mostra a tela de obrigado — falta ligar a um destino.
 - Contatos reais: e-mail, Instagram, Vimeo, WhatsApp (`src/content/site.ts`).

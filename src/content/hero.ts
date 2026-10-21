@@ -7,14 +7,15 @@ export const HERO = {
     "You capture the moments. We bring the story together — in your style, under your brand, on your deadline.",
   primaryCta: "Request a free edit test",
   secondaryCta: "Watch the showreel",
-  /** Pôster: aparece na hora (LCP) e fica por baixo até o vídeo começar. */
-  image: "/films/_mWVsNkK_MI.jpg",
   /**
-   * Fundo em vídeo. Hoje vem do YouTube (reel de portfólio da Aline). Para
-   * produção, o ideal é um recorte próprio em MP4 (10–20 s, sem som): basta
-   * preencher `mp4` e ele passa na frente do YouTube.
+   * Fundo em vídeo: recorte de 18 s (3:07–3:25) do reel de portfólio da Aline,
+   * mudo. Duas versões — 16:9 para desktop e recorte 9:16 para celular — cada
+   * uma com o pôster no primeiro frame.
    */
-  video: { youtubeId: "_mWVsNkK_MI", mp4: "" },
-  /** O botão "Watch the showreel" abre o mesmo reel, com som. */
+  video: {
+    desktop: { mp4: "/video/hero-1280.mp4", poster: "/video/hero-1280.jpg" },
+    mobile: { mp4: "/video/hero-540x960.mp4", poster: "/video/hero-540x960.jpg" },
+  },
+  /** O botão "Watch the showreel" abre o reel inteiro, com som (YouTube). */
   showreelYoutubeId: "_mWVsNkK_MI",
 } as const;

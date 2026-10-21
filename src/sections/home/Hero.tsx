@@ -9,7 +9,7 @@ import { VideoModal } from "@/ui/VideoModal";
 
 /**
  * Para quem é (eyebrow), o que é (título) e a promessa (descrição), sobre o
- * reel de portfólio rodando ao fundo. Dois caminhos: o edit test (conversão) e o showreel (prova).
+ * recorte do reel de portfólio rodando ao fundo. Dois caminhos: o edit test (conversão) e o showreel (prova).
  */
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -19,11 +19,9 @@ export function Hero() {
   return (
     <section ref={root} id="top" className="grain relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-night text-paper lg:min-h-[calc(100svh-9.5rem)]">
       <div data-hero-bg className="absolute inset-0 -z-10">
-        <BackgroundVideo poster={HERO.image} youtubeId={HERO.video.youtubeId} mp4={HERO.video.mp4} />
+        <BackgroundVideo desktop={HERO.video.desktop} mobile={HERO.video.mobile} />
         <div className="absolute inset-0 bg-night/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-night via-night/25 to-night/30" />
-        {/* Base mais fechada: esconde legenda queimada no rodapé do reel. */}
-        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-night to-transparent" />
       </div>
 
       <div className="mx-auto w-full max-w-page px-5 pb-14 pt-32 text-center sm:px-8 sm:pb-20 lg:px-12">
@@ -56,7 +54,7 @@ export function Hero() {
         </div>
       </div>
 
-      <VideoModal open={reelOpen} onClose={() => setReelOpen(false)} title="Showreel" poster={HERO.image} youtubeId={HERO.showreelYoutubeId} />
+      <VideoModal open={reelOpen} onClose={() => setReelOpen(false)} title="Showreel" poster={HERO.video.desktop.poster} youtubeId={HERO.showreelYoutubeId} />
     </section>
   );
 }
