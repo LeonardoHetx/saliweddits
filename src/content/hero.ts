@@ -5,8 +5,7 @@ export const HERO = {
   script: "we cut it like it's ours",
   description:
     "You capture the moments. We bring the story together — in your style, under your brand, on your deadline.",
-  primaryCta: "Request a free edit test",
-  secondaryCta: "Watch the showreel",
+  primaryCta: "Let's work together",
   /**
    * Fundo em vídeo: recorte de 18 s (3:07–3:25) do reel de portfólio da Aline,
    * mudo. Duas versões — 16:9 para desktop e recorte 9:16 para celular — cada
@@ -16,6 +15,4 @@ export const HERO = {
     desktop: { mp4: "/video/hero-1280.mp4", poster: "/video/hero-1280.jpg" },
     mobile: { mp4: "/video/hero-540x960.mp4", poster: "/video/hero-540x960.jpg" },
   },
-  /** O botão "Watch the showreel" abre o reel inteiro, com som (YouTube). */
-  showreelYoutubeId: "_mWVsNkK_MI",
 } as const;

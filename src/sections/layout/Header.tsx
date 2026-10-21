@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CTA_HREF, HEADER_CTA, NAV_LINKS } from "@/content/site";
+import { NAV_LINKS } from "@/content/site";
 import { Container } from "@/ui/Container";
 import { cx } from "@/ui/cx";
 import { CloseIcon } from "@/ui/icons";
@@ -65,7 +65,7 @@ export function Header() {
         <nav aria-label="Main" className="border-y hairline">
           <ul className="flex justify-center">
             {NAV_LINKS.map((link) => (
-              <li key={link.href} className="border-l hairline">
+              <li key={link.href} className="border-l hairline last:border-r">
                 <a
                   href={link.href}
                   aria-current={link.href === active ? "true" : undefined}
@@ -75,11 +75,6 @@ export function Header() {
                 </a>
               </li>
             ))}
-            <li className="border-x hairline">
-              <a href={CTA_HREF} className="label block px-9 py-3 transition-colors hover:bg-ink hover:text-paper">
-                {HEADER_CTA}
-              </a>
-            </li>
           </ul>
         </nav>
       </header>
@@ -105,11 +100,6 @@ export function Header() {
                 </a>
               </li>
             ))}
-            <li>
-              <a href={CTA_HREF} className="label border border-ink/70 px-5 py-2.5 transition-colors hover:bg-ink hover:text-paper">
-                {HEADER_CTA}
-              </a>
-            </li>
           </ul>
           <button
             type="button"
@@ -150,14 +140,6 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a
-            href={CTA_HREF}
-            tabIndex={menuOpen ? 0 : -1}
-            className="label mt-6 border border-paper/60 px-7 py-3"
-            onClick={() => setMenuOpen(false)}
-          >
-            {HEADER_CTA}
-          </a>
         </nav>
       </div>
     </>

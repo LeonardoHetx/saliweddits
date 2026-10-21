@@ -8,8 +8,6 @@ export const SITE = {
   wordmark: { serif: "SALI", script: "weddits" },
   email: "hello@saliweddits.com",
   instagram: { handle: "@saliweddits", href: "https://instagram.com/" },
-  vimeo: { label: "Vimeo", href: "https://vimeo.com/" },
-  whatsapp: { label: "WhatsApp", href: "https://wa.me/" },
 } as const;
 
 /** Menu: as quatro "páginas" são seções da mesma página, por âncora. */
@@ -20,6 +18,5 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-/** Destino de todos os CTAs: o formulário do edit test. */
-export const CTA_HREF = "#edit-test";
-export const HEADER_CTA = "Free edit test";
+/** Destino de todos os CTAs: a seção de contato. */
+export const CTA_HREF = "#contact";

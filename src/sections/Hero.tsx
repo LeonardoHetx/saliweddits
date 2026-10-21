@@ -1,19 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { HERO } from "@/content/hero";
 import { CTA_HREF } from "@/content/site";
 import { useHeroIntro } from "@/lib/motion";
 import { ButtonLink } from "@/ui/Button";
-import { PlayIcon } from "@/ui/icons";
 import { BackgroundVideo } from "@/ui/BackgroundVideo";
-import { VideoModal } from "@/ui/VideoModal";
 
 /**
  * Para quem é (eyebrow), o que é (título) e a promessa (descrição), sobre o
- * recorte do reel de portfólio rodando ao fundo. Dois caminhos: o edit test (conversão) e o showreel (prova).
+ * recorte do reel de portfólio rodando ao fundo, e um único CTA: o contato.
  */
 export function Hero() {
   const root = useRef<HTMLElement>(null);
-  const [reelOpen, setReelOpen] = useState(false);
   useHeroIntro(root);
 
   return (
@@ -37,24 +34,12 @@ export function Hero() {
         <p data-hero-line className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-paper/80 sm:text-lg">
           {HERO.description}
         </p>
-        <div data-hero-line className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <div data-hero-line className="mt-10 flex justify-center">
           <ButtonLink href={CTA_HREF} tone="light">
             {HERO.primaryCta}
           </ButtonLink>
-          <button
-            type="button"
-            onClick={() => setReelOpen(true)}
-            className="label group inline-flex min-h-11 items-center gap-3 text-paper/90 hover:text-paper"
-          >
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-paper/60 transition-colors group-hover:bg-paper group-hover:text-ink">
-              <PlayIcon className="ml-0.5 h-3.5 w-3.5" />
-            </span>
-            {HERO.secondaryCta}
-          </button>
         </div>
       </div>
-
-      <VideoModal open={reelOpen} onClose={() => setReelOpen(false)} title="Showreel" poster={HERO.video.desktop.poster} youtubeId={HERO.showreelYoutubeId} />
     </section>
   );
 }

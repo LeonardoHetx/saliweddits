@@ -1,17 +1,11 @@
-/** CONTACT — faixa de CTA (abre a seção) + o formulário do edit test. */
-export const CTA_BAND = {
-  title: "Let's edit",
-  script: "your next season",
-  button: "Request a free edit test",
-  image: "/mock/cta.jpg",
+/** CONTACT — título + formulário. MOCK. */
+export const CONTACT = {
+  title: "Contact",
 } as const;
 
-export const EDIT_TEST = {
-  title: "The Edit Test",
-  script: "one film, on us",
+export const INQUIRY = {
   description:
-    "Send us one wedding you've already delivered. We'll cut a 60-second teaser in your style — free — so you can compare it side by side with your own.",
-  steps: ["Fill the form", "We reply within 24h with an upload link", "Your teaser in 5 days"],
+    "Tell us about your studio and the films you need edited, and we'll get back to you to talk about how we can work together.",
   fields: {
     name: "Your name",
     studio: "Studio / company",
@@ -23,28 +17,12 @@ export const EDIT_TEST = {
     needsOptions: ["Teasers & social edits", "Highlight films", "Feature films", "Documentary edits"],
     message: "Anything we should know? (optional)",
   },
-  submit: "Send my request",
+  submit: "Send inquiry",
   success: {
     title: "Thank you",
-    text: "We'll reply within 24 hours with your upload link.",
+    script: "talk soon",
+    text: "We've got your message and will get back to you soon.",
   },
-  privacy: "No spam. We only use your details to reply to this request.",
-} as const;
-
-export const STRIP = {
-  label: "Follow the cuts",
-  images: [
-    "/mock/strip-01.jpg",
-    "/mock/strip-02.jpg",
-    "/mock/strip-03.jpg",
-    "/mock/strip-04.jpg",
-    "/mock/strip-05.jpg",
-    "/mock/strip-06.jpg",
-    "/mock/strip-07.jpg",
-    "/mock/strip-08.jpg",
-    "/mock/strip-09.jpg",
-    "/mock/strip-10.jpg",
-  ],
 } as const;
 
 export const FOOTER = {
@@ -52,5 +30,5 @@ export const FOOTER = {
   origin: "Made in Brazil. Editing love stories everywhere.",
 } as const;
 
-/** Linha de contato direto, embaixo da explicação do edit test. */
-export const CONTACT_DIRECT = "Prefer to talk first? Write to us — we reply within 24 hours, Monday to Friday.";
+/** Linha de contato direto, embaixo da explicação do formulário. */
+export const CONTACT_DIRECT = "Prefer email? Write to us at";

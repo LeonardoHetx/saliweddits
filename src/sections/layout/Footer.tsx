@@ -8,12 +8,10 @@ export function Footer() {
   const connect = [
     { label: SITE.email, href: `mailto:${SITE.email}` },
     { label: `Instagram ${SITE.instagram.handle}`, href: SITE.instagram.href },
-    { label: SITE.vimeo.label, href: SITE.vimeo.href },
-    { label: SITE.whatsapp.label, href: SITE.whatsapp.href },
   ];
 
   return (
-    <footer className="bg-linen">
+    <footer className="border-t hairline bg-paper">
       <div className="grid border-b hairline md:grid-cols-3">
         <div className="border-b hairline px-5 py-12 text-center md:border-b-0 md:border-r">
           <p className="script text-3xl">Navigate</p>

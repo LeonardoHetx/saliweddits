@@ -1,27 +1,15 @@
-import { Contact } from "@/sections/contact/Contact";
-import { Faq } from "@/sections/contact/Faq";
-import { Craft } from "@/sections/home/Craft";
-import { Hero } from "@/sections/home/Hero";
-import { Intro } from "@/sections/home/Intro";
-import { Process } from "@/sections/home/Process";
-import { Testimonials } from "@/sections/home/Testimonials";
-import { WhatWeEdit } from "@/sections/home/WhatWeEdit";
+import { Contact } from "@/sections/Contact";
+import { Hero } from "@/sections/Hero";
 import { Footer } from "@/sections/layout/Footer";
 import { Header } from "@/sections/layout/Header";
-import { PhotoStrip } from "@/sections/layout/PhotoStrip";
 import { OurStory } from "@/sections/OurStory";
 import { OurWork } from "@/sections/OurWork";
+import { Process } from "@/sections/Process";
 
 /**
- * Página única. O menu (Home · Our Work · Our Story · Contact) são âncoras.
- *
- * Narrativa: quem/o quê (Hero) → dor e promessa (Intro) → prova visual
- * (Our Work) → os formatos (What We Edit) → o ofício (Craft) → como funciona
- * (Process) → prova social (Testimonials) → as pessoas (Our Story) →
- * objeções (FAQ) → conversão (Contact: faixa + edit test).
- *
- * Superfícies — nunca duas iguais seguidas: noite → linho → papel → linho →
- * noite → papel → sálvia → linho → sálvia → papel → noite → papel → linho.
+ * Página única. Menu: Home (Hero) · Our Work · Our Story · Contact; o How We
+ * Work Together fica entre Our Work e Our Story (o que editamos → como →
+ * quem). Superfícies alternam: noite → papel → linho → papel → linho → papel.
  */
 export function Landing() {
   return (
@@ -29,17 +17,11 @@ export function Landing() {
       <Header />
       <main className="min-w-0">
         <Hero />
-        <Intro />
         <OurWork />
-        <WhatWeEdit />
-        <Craft />
         <Process />
-        <Testimonials />
         <OurStory />
-        <Faq />
         <Contact />
       </main>
-      <PhotoStrip />
       <Footer />
     </>
   );

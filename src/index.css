@@ -107,45 +107,6 @@ html.js [data-reveal].is-in {
   mix-blend-mode: overlay;
 }
 
-/* Faixa de fotos do rodapé: rola sozinha, para no hover. */
-@keyframes marquee {
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-.marquee {
-  animation: marquee 60s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    animation: none;
-  }
-}
-
-/* Antes/depois de cor: o "log" é a mesma foto achatada e dessaturada. */
-.log-look {
-  filter: saturate(0.35) contrast(0.68) brightness(1.12) sepia(0.12);
-}
-
-.graded-look {
-  filter: saturate(1.05) contrast(1.08) sepia(0.18);
-}
-
 dialog::backdrop {
   background: rgb(27 26 23 / 0.92);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

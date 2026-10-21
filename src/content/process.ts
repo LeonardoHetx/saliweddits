@@ -1,4 +1,4 @@
-/** PROCESS — tira o medo de terceirizar: mostra que é simples e previsível. */
+/** PROCESS — MOCK (prazos e rodadas a confirmar com a Aline). Mostra que terceirizar é simples e previsível. */
 export const PROCESS = {
   title: "How we work together",
   script: "five steps, no surprises",

@@ -11,7 +11,7 @@ export function StoryIntro() {
   useParallax(img, 10);
 
   return (
-    <section className="bg-linen pb-20 pt-12 sm:pb-28 sm:pt-16 lg:pb-36">
+    <div className="pt-12 sm:pt-16">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[6fr_5fr] lg:gap-20">
           <Reveal>
@@ -34,6 +34,6 @@ export function StoryIntro() {
           <p className="script mt-2 text-[2.2rem] text-ink-soft sm:text-5xl">{STORY.closing.script}</p>
         </Reveal>
       </Container>
-    </section>
+    </div>
   );
 }

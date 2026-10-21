@@ -1,7 +1,8 @@
-import { useState, type FormEvent } from "react";
-import { CONTACT_DIRECT, EDIT_TEST } from "@/content/closing";
+import { useState, type FormEvent, type ReactNode } from "react";
+import { CONTACT, CONTACT_DIRECT, INQUIRY } from "@/content/closing";
 import { SITE } from "@/content/site";
 import { Container } from "@/ui/Container";
+import { SectionTitle } from "@/ui/SectionTitle";
 import { cx } from "@/ui/cx";
 import { Reveal } from "@/ui/Reveal";
 
@@ -9,14 +10,15 @@ const FIELD =
   "w-full border-0 border-b border-ink/30 bg-transparent px-0 py-3 text-base font-light text-ink placeholder:text-ink-mute focus:border-ink focus:outline-none focus:ring-0";
 
 /**
- * O edit test: oferta de risco zero para um serviço de confiança. A coluna da
- * esquerda explica o que acontece depois do envio; a da direita é o form.
+ * CONTACT — o título da seção e o formulário: à esquerda o convite e o e-mail
+ * direto, à direita o form — que já qualifica o filmmaker (volume e formatos
+ * que ele precisa).
  * MOCK — o envio só troca para a tela de obrigado; falta ligar a um destino
  * (e-mail, webhook ou planilha).
  */
-export function EditTest() {
+export function Contact() {
   const [sent, setSent] = useState(false);
-  const f = EDIT_TEST.fields;
+  const f = INQUIRY.fields;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,21 +26,12 @@ export function EditTest() {
   }
 
   return (
-    <section id="edit-test" className="bg-paper py-20 sm:py-28">
+    <section id="contact" className="bg-linen py-20 sm:py-28">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-24">
+        <SectionTitle title={CONTACT.title} />
+        <div className="mt-14 grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-24">
           <Reveal>
-            <h2 className="display text-[2rem] sm:text-[2.75rem]">{EDIT_TEST.title}</h2>
-            <p className="script text-[1.8rem] text-ink-soft sm:text-[2.2rem]">{EDIT_TEST.script}</p>
-            <p className="mt-6 leading-relaxed text-ink-soft sm:text-lg">{EDIT_TEST.description}</p>
-            <ol className="mt-10 space-y-5 border-t hairline pt-8">
-              {EDIT_TEST.steps.map((step, i) => (
-                <li key={step} className="flex items-baseline gap-4">
-                  <span className="script w-8 text-3xl text-ink-mute">0{i + 1}</span>
-                  <span className="label">{step}</span>
-                </li>
-              ))}
-            </ol>
+            <p className="font-display text-[1.6rem] leading-[1.35] sm:text-[2rem]">{INQUIRY.description}</p>
             <p className="mt-10 border-t hairline pt-8 text-sm leading-relaxed text-ink-soft">
               {CONTACT_DIRECT}{" "}
               <a href={`mailto:${SITE.email}`} className="text-ink underline underline-offset-4 hover:opacity-60">
@@ -50,9 +43,9 @@ export function EditTest() {
           <Reveal delay={150}>
             {sent ? (
               <div className="flex h-full min-h-[24rem] flex-col items-center justify-center border hairline p-10 text-center" role="status">
-                <p className="display text-3xl">{EDIT_TEST.success.title}</p>
-                <p className="script mt-1 text-3xl text-ink-soft">see you soon</p>
-                <p className="mt-6 max-w-sm text-ink-soft">{EDIT_TEST.success.text}</p>
+                <p className="display text-3xl">{INQUIRY.success.title}</p>
+                <p className="script mt-1 text-3xl text-ink-soft">{INQUIRY.success.script}</p>
+                <p className="mt-6 max-w-sm text-ink-soft">{INQUIRY.success.text}</p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
@@ -91,13 +84,12 @@ export function EditTest() {
                   <textarea name="message" rows={3} className={cx(FIELD, "resize-none")} />
                 </Field>
 
-                <div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-xs text-ink-mute">{EDIT_TEST.privacy}</p>
+                <div className="flex sm:col-span-2 sm:justify-end">
                   <button
                     type="submit"
                     className="label min-h-12 border border-ink bg-ink px-9 py-3 text-paper transition-colors hover:bg-transparent hover:text-ink"
                   >
-                    {EDIT_TEST.submit}
+                    {INQUIRY.submit}
                   </button>
                 </div>
               </form>
@@ -109,7 +101,7 @@ export function EditTest() {
   );
 }
 
-function Field({ label, className, children }: { label: string; className?: string; children: React.ReactNode }) {
+function Field({ label, className, children }: { label: string; className?: string; children: ReactNode }) {
   return (
     <label className={cx("block", className)}>
       <span className="label text-ink-soft">{label}</span>

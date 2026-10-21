@@ -3,10 +3,10 @@ import { Container } from "@/ui/Container";
 import { Reveal } from "@/ui/Reveal";
 import { SectionTitle } from "@/ui/SectionTitle";
 
-/** Tira o medo de terceirizar: cinco passos curtos, com prazo no meio. */
+/** HOW WE WORK TOGETHER — tira o medo de terceirizar: cinco passos curtos, com prazo no meio. */
 export function Process() {
   return (
-    <section id="process" className="bg-paper py-20 sm:py-28 lg:py-36">
+    <section id="process" className="bg-linen py-20 sm:py-28">
       <Container>
         <SectionTitle title={PROCESS.title} script={PROCESS.script} />
 

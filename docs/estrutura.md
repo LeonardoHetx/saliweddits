@@ -4,14 +4,14 @@ Página única, em inglês, para **filmmakers e estúdios** (B2B, como a
 raweddings.co): quem compra é quem filma, não o casal. O menu (Home · Our
 Work · Our Story · Contact) são âncoras na mesma página.
 
-A conversão é o **edit test**: o filmmaker manda um casamento já entregue e
-recebe um teaser grátis no estilo dele. Todo CTA leva para `#edit-test`.
+A conversão é o formulário de contato (`#inquire`): todo CTA leva para lá.
+O form já qualifica o filmmaker — volume de casamentos e formatos que precisa.
 
 ## Ordem e por quê
 
 | # | Seção | Âncora | O que diz | Copy |
 |---|---|---|---|---|
-| 1 | Hero | `#top` | Para quem é, o que é, a promessa. Vídeo de fundo: recorte de 18 s do reel (`public/video/`, 16:9 e 9:16). CTA: edit test + showreel | mock |
+| 1 | Hero | `#top` | Para quem é, o que é, a promessa. Vídeo de fundo: recorte de 18 s do reel (`public/video/`, 16:9 e 9:16). CTA único: contato | mock |
 | 2 | Intro | — | A dor ("40 horas de material num HD e sábado já tem casamento"), 3 pilares (seu estilo · sua marca · no prazo) e números | mock |
 | 3 | Our Work | `#our-work` | Prova visual cedo: tríptico com os 3 filmes reais + "More films" por formato | filmes reais + abas mock |
 | 4 | What We Edit | `#what-we-edit` | Os 4 formatos, do teaser ao documentário | **final** |
@@ -20,7 +20,7 @@ recebe um teaser grátis no estilo dele. Todo CTA leva para `#edit-test`.
 | 7 | Testimonials | — | Prova social de outros filmmakers | mock |
 | 8 | Our Story | `#our-story` | O estúdio e a Aline: as pessoas depois da prova | **final** |
 | 9 | FAQ | `#faq` | Objeções de quem nunca terceirizou | mock |
-| 10 | Contact | `#contact` | Faixa "Let's edit your next season" + formulário do edit test | mock |
+| 10 | Contact | `#contact` | Faixa "Let's edit your next season" + formulário de contato | mock |
 | — | Faixa de fotos + rodapé | — | Instagram, navegação, contato | mock |
 
 A lógica: **o quê → dor → prova → oferta → como → quem → dúvidas → ação**.

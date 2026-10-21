@@ -6,13 +6,9 @@ export default {
     extend: {
       colors: {
         // Papéis quentes da referência (Lucia/Showit): nada de branco puro nem
-        // cinza neutro — tudo puxado para o bege/sálvia.
+        // cinza neutro — tudo puxado para o bege.
         paper: "#F2F0EA",
         linen: "#E8E6DC",
-        sage: {
-          DEFAULT: "#D6D7C9",
-          deep: "#BFC1AF",
-        },
         ink: {
           DEFAULT: "#24231F",
           soft: "#55534B",

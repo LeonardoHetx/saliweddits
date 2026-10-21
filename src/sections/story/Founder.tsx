@@ -6,10 +6,10 @@ import { Reveal } from "@/ui/Reveal";
 /** "Meet the founder": rosto, voz em primeira pessoa e assinatura. */
 export function Founder() {
   return (
-    <section id="founder" className="bg-sage py-20 sm:py-28 lg:py-36">
+    <div className="pt-20 sm:pt-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
-          <Reveal className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden border-[6px] border-paper/50 lg:max-w-none">
+          <Reveal className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden border-[6px] border-linen lg:max-w-none">
             <Photo src={FOUNDER.image} mono alt={`${FOUNDER.name}, ${FOUNDER.role}`} />
           </Reveal>
           <Reveal delay={150}>
@@ -26,6 +26,6 @@ export function Founder() {
           </Reveal>
         </div>
       </Container>
-    </section>
+    </div>
   );
 }
