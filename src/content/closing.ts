@@ -20,6 +20,7 @@ export const INQUIRY = {
   submit: "Send inquiry",
   sending: "Sending…",
   error: "Something went wrong and your message wasn't sent. Please try again, or write to us at",
+  rateLimited: "Too many attempts in a short time. Please wait a minute and try again, or write to us at",
   success: {
     title: "Thank you",
     script: "talk soon",

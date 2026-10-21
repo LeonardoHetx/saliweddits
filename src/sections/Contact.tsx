@@ -1,7 +1,7 @@
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { CONTACT, CONTACT_DIRECT, INQUIRY } from "@/content/closing";
 import { SITE } from "@/content/site";
-import { sendLead } from "@/lib/leads";
+import { LeadError, sendLead } from "@/lib/leads";
 import { Container } from "@/ui/Container";
 import { SectionTitle } from "@/ui/SectionTitle";
 import { cx } from "@/ui/cx";
@@ -18,19 +18,25 @@ const FIELD =
  * continua preenchido e oferece o e-mail como saída.
  */
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rate_limited">("idle");
   const f = INQUIRY.fields;
+  // Quando o form apareceu: vai junto no envio para o script descartar bot
+  // (envio rápido demais para um humano ter preenchido).
+  const startedAt = useRef(0);
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "sending") return;
     setStatus("sending");
     try {
-      await sendLead(e.currentTarget);
+      await sendLead(e.currentTarget, startedAt.current);
       setStatus("sent");
     } catch (err) {
       console.error("[leads]", err);
-      setStatus("error");
+      setStatus(err instanceof LeadError && err.reason === "rate_limited" ? "rate_limited" : "error");
     }
   }
 
@@ -96,9 +102,9 @@ export function Contact() {
                   <textarea name="message" rows={3} className={cx(FIELD, "resize-none")} />
                 </Field>
 
-                {status === "error" && (
+                {(status === "error" || status === "rate_limited") && (
                   <p role="alert" className="text-sm leading-relaxed text-ink sm:col-span-2">
-                    {INQUIRY.error}{" "}
+                    {status === "rate_limited" ? INQUIRY.rateLimited : INQUIRY.error}{" "}
                     <a href={`mailto:${SITE.email}`} className="underline underline-offset-4 hover:opacity-60">
                       {SITE.email}
                     </a>
