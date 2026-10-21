@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@/content/site";
 import { Container } from "@/ui/Container";
 import { cx } from "@/ui/cx";
 import { CloseIcon } from "@/ui/icons";
-import { Wordmark } from "@/ui/Wordmark";
+import { Logo } from "@/ui/Logo";
 
 type NavHref = (typeof NAV_LINKS)[number]["href"];
 
@@ -32,7 +32,7 @@ function useActiveSection(): NavHref {
 }
 
 /**
- * Desktop: wordmark centralizado e a régua de navegação com divisórias, como
+ * Desktop: logo centralizada e a régua de navegação com divisórias, como
  * na referência; ao rolar, uma barra compacta desce do topo.
  * Mobile: barra compacta fixa desde o início + menu em tela cheia.
  */
@@ -60,7 +60,7 @@ export function Header() {
       {/* Desktop: topo editorial */}
       <header className="hidden bg-paper lg:block">
         <div className="flex justify-center pb-6 pt-8">
-          <Wordmark />
+          <Logo className="h-28" />
         </div>
         <nav aria-label="Main" className="border-y hairline">
           <ul className="flex justify-center">
@@ -87,7 +87,7 @@ export function Header() {
         )}
       >
         <Container className="flex h-16 items-center justify-between">
-          <Wordmark size="sm" />
+          <Logo variant="mark" className="h-7" />
           <ul className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

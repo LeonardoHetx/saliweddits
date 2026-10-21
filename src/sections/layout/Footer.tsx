@@ -1,7 +1,7 @@
 import { FOOTER } from "@/content/closing";
 import { NAV_LINKS, SITE } from "@/content/site";
 import { Container } from "@/ui/Container";
-import { Wordmark } from "@/ui/Wordmark";
+import { Logo } from "@/ui/Logo";
 
 /** Três colunas com divisórias finas, como o rodapé da referência. */
 export function Footer() {
@@ -26,7 +26,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center gap-4 border-b hairline px-5 py-12 text-center md:border-b-0 md:border-r">
-          <Wordmark />
+          <Logo className="h-28" />
           <p className="max-w-[16rem] text-sm text-ink-soft">{FOOTER.tagline}</p>
         </div>
         <div className="px-5 py-12 text-center">

@@ -26,6 +26,8 @@ alternam (noite, papel, linho) para nunca repetir duas iguais seguidas.
 - Our Work: `src/content/work.ts` (texto + `youtubeId` de cada formato). Os
   pôsteres em `public/work/` são frames 1080p dos filmes, recortados em 4:5
   com o casal no centro (o painel estreito do desktop corta o meio deles).
+- Logo: `public/brand/` (logo completa, só "Sali", imagem de compartilhamento)
+  e os ícones em `public/` — recortados do arquivo da cliente, fundo transparente.
 - Fotos de mock: `public/mock/` (picsum.photos / acervo Unsplash) — trocar
   pelas reais.
 
@@ -35,5 +37,9 @@ alternam (noite, papel, linho) para nunca repetir duas iguais seguidas.
 - Prazos e rodadas do How We Work Together (14 dias, 2 rodadas): mock.
 - Filme de documentário (`youtubeId` + pôster) para o 4º painel do Our Work.
 - Foto da Aline (`FOUNDER.image`) e da história (`STORY.image`).
-- Formulário: hoje só mostra a tela de obrigado — falta ligar a um destino.
+- Leads: publicar o Apps Script da planilha e pôr a URL em `VITE_LEADS_URL`
+  (`.env` no build) — passo a passo em [`apps-script/README.md`](../apps-script/README.md).
+  Sem a URL, o build de produção mostra erro no envio em vez de perder o lead.
+- Compartilhamento: trocar o `og:image` do `index.html` por URL absoluta
+  quando o domínio existir.
 - E-mail real (`src/content/site.ts`); o Instagram já é o oficial.
