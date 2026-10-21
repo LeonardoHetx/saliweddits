@@ -1,0 +1,44 @@
+import type { Config } from "tailwindcss";
+
+export default {
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        // Papéis quentes da referência (Lucia/Showit): nada de branco puro nem
+        // cinza neutro — tudo puxado para o bege/sálvia.
+        paper: "#F2F0EA",
+        linen: "#E8E6DC",
+        sage: {
+          DEFAULT: "#D6D7C9",
+          deep: "#BFC1AF",
+        },
+        ink: {
+          DEFAULT: "#24231F",
+          soft: "#55534B",
+          mute: "#8A877C",
+        },
+        // Superfície escura das seções de cinema (hero, ofício, fechamento).
+        night: {
+          DEFAULT: "#1B1A17",
+          soft: "#2A2925",
+          line: "#3A3934",
+        },
+      },
+      fontFamily: {
+        display: ['"Bodoni Moda"', "Didot", "Georgia", "serif"],
+        // Cursiva legível (Petit Formal Script), hospedada no projeto — ver
+        // @font-face em index.css.
+        script: ['"Sali Script"', "cursive"],
+        sans: ["Jost", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+      },
+      letterSpacing: {
+        label: "0.22em",
+      },
+      maxWidth: {
+        page: "80rem",
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config;
