@@ -40,7 +40,7 @@ alternam (noite, papel, linho) para nunca repetir duas iguais seguidas.
 - Copy final de Hero, How We Work Together e Contact.
 - Prazos e rodadas do How We Work Together (14 dias, 2 rodadas): mock.
 - Filme de documentário (`youtubeId` + pôster) para o 4º painel do Our Work.
-- Foto da Aline (`FOUNDER.image`) e da história (`STORY.image`).
+- Foto da história (`STORY.image`); a da Aline já é a real.
 - Leads em produção: subir o container com `LEADS_URL` e colar a versão nova
   do `Code.gs` no Apps Script (nova versão da implantação).
 - WhatsApp: configurar a Meta Cloud API (app, modelo `novo_lead`, token) nas

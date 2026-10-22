@@ -10,7 +10,7 @@ export function Founder() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-20">
           <Reveal className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden border-[6px] border-linen lg:max-w-none">
-            <Photo src={FOUNDER.image} mono alt={`${FOUNDER.name}, ${FOUNDER.role}`} />
+            <Photo src={FOUNDER.image} alt={`${FOUNDER.name}, ${FOUNDER.role}`} />
           </Reveal>
           <Reveal delay={150}>
             <p className="label text-umber">{FOUNDER.kicker}</p>

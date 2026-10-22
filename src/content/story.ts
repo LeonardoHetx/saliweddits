@@ -34,6 +34,5 @@ export const FOUNDER = {
   signoff: "Made in Brazil. Editing love stories everywhere.",
   name: "Aline",
   role: "Founder & lead editor",
-  /** MOCK — trocar pela foto da Aline. */
-  image: "/mock/team-02.jpg",
+  image: "/story/aline.jpg",
 } as const;
