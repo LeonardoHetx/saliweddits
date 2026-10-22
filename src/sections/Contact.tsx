@@ -10,6 +10,10 @@ import { Reveal } from "@/ui/Reveal";
 const FIELD =
   "w-full border-0 border-b border-ink/30 bg-transparent px-0 py-3 text-base font-light text-ink placeholder:text-ink-mute focus:border-olive focus:outline-none focus:ring-0";
 
+/** Mensagem: caixa com borda fina, como os chips — só o sublinhado ficava solto longe do rótulo. */
+const BOX =
+  "mt-3 block w-full resize-y border border-ink/30 bg-transparent px-4 py-3 text-base font-light text-ink placeholder:text-ink-mute focus:border-olive focus:outline-none focus:ring-0";
+
 /**
  * CONTACT — o título da seção e o formulário: à esquerda o convite e o e-mail
  * direto, à direita o form — que já qualifica o filmmaker (volume e formatos
@@ -99,7 +103,7 @@ export function Contact() {
                 <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-px w-px opacity-0" />
 
                 <Field label={f.message} className="sm:col-span-2">
-                  <textarea name="message" rows={3} className={cx(FIELD, "resize-none")} />
+                  <textarea name="message" rows={4} className={BOX} />
                 </Field>
 
                 {(status === "error" || status === "rate_limited") && (
